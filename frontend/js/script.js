@@ -1,17 +1,16 @@
 //------------------------------------------------------------------------
 // Récupération des produits via l'api //
-
 fetch("http://localhost:3000/api/products")
-  // réponse donne le résultat en json.
+  // réponse => résultat en json.
   .then((res) => res.json())
-  //  resulat reçu et traité en json = objectProducts
+  //  resulat json = objectProducts
   .then((objectProducts) => {
-    //  en console : les donnees récupérées dans un tableau.
+    //console => les donnees récupérées dans un tableau.
     console.table(objectProducts);
     // appel de la fonction d'affichage des produits
     lesKanaps(objectProducts);
   })
-  // si erreur remplace le titre par un h1 "erreur 404" et affiche la dans la console.
+  // si erreur => h1 "erreur 404" et l'affiche dans la console.
   .catch((err) => {
     document.querySelector(".titles").innerHTML = "<h1>erreur 404</h1>";
     console.log("erreur 404, sur ressource api:" + err);
