@@ -3,7 +3,7 @@ const page = document.location.href;
 //-----------------------------------
 // Récupération des produits de l'api
 //-----------------------------------
-// appel de la ressource api product (script.j) si on est sur la page panier
+// appel de la ressource api product (script.js) si on est sur la page panier
 if (page.match("cart")) {
 fetch("http://localhost:3000/api/products")
   .then((res) => res.json())

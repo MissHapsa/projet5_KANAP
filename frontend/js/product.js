@@ -54,9 +54,9 @@ function lesKanaps(produit) {
   }
   console.log("affichage effectué");
 }
-//------------------------------------------------------------------------
-// choix couleur dynamique
-//------------------------------------------------------------------------
+//---------------
+// choix couleur 
+//--------------
 // définition des variables
 let choixCouleur = document.querySelector("#colors");
 // On écoute ce qu'il se passe dans #colors
@@ -66,14 +66,13 @@ choixCouleur.addEventListener("input", (ec) => {
   couleurProduit = ec.target.value;
   // on ajoute la couleur à l'objet panierClient
   articleClient.couleur = couleurProduit;
-  //ça reset la couleur et le texte du bouton si il y a une action sur les inputs dans le cas d'une autre commande du même produit
   document.querySelector("#addToCart").style.color = "white";
   document.querySelector("#addToCart").textContent = "Ajouter au panier";
   console.log(couleurProduit);
 });
-//-------------------------------------------------------------------------
+//-------------------------
 // choix quantité dynamique
-//------------------------------------------------------------------------
+//--------------------------
 // définition des variables
 let choixQuantité = document.querySelector('input[id="quantity"]');
 let quantitéProduit;
@@ -116,12 +115,12 @@ choixProduit.addEventListener("click", () => {
     document.querySelector("#addToCart").textContent = "Produit ajouté !";
   }
 });
-//------------------------------------------------------------------------
-// Déclaration de tableaux utiles (voir mutation)
-//------------------------------------------------------------------------
-// déclaration tableau qui sera le 1er, unique et destiné à initialiser le panier
+//------------------------------------------------
+// Déclaration de tableaux
+//------------------------------------------------*
+// déclaration tableau qui sera le 1er pour initialiser le panier
 let choixProduitClient = [];
-// déclaration tableau qui sera ce qu'on récupère du local storage appelé panierStocké et qu'on convertira en JSon (importance dans Panier())
+// déclaration tableau qui sera ce qu'on récupère du local storage appelé panierStocké et qu'on convertira en JSon 
 let produitsEnregistrés = [];
 // déclaration tableau qui sera un choix d'article/couleur non effectué donc non présent dans le panierStocké
 let produitsTemporaires = [];
@@ -142,7 +141,8 @@ function ajoutPremierProduit() {
   }
 }
 //-------------------------------------------------------------------------
-// fonction ajoutAutreProduit qui ajoute l'article dans le tableau non vierge et fait un tri
+// fonction ajoutAutreProduit 
+//qui ajoute l'article dans le tableau non vierge et fait un tri
 //------------------------------------------------------------------------- 
 function ajoutAutreProduit() {
   // vide/initialise produitsAPousser pour recevoir les nouvelles données
