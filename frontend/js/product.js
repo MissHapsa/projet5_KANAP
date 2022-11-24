@@ -145,9 +145,6 @@ function addToCart(event, product) {
     quantity: quantity.value,
     option: option.value,
     _id: product._id,
-    name: product.name,
-    image: product.imageUrl,
-    alt: product.altTxt,
   };
   saveBasket(kanapItem);
  
