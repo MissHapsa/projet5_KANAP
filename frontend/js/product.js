@@ -68,14 +68,6 @@ function builProduct(product) {
   }
 }
 
-//Création du kanapItem avec ses éléments
-class kanapItem {
-  constructor(id, option, quantity) {
-    this.id = id;
-    this.option = option;
-    this.quantity = quantity;
-  }
-}
 
 // On vérifie la quantité et la couleur selectionnée, pour éviter l'ajout d'un produit sans couleur et/ou sans quantité dans le panier
 const option = document.getElementById("colors");

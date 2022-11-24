@@ -271,7 +271,7 @@ button.addEventListener("click", (e) => {
       checkFormulaire.address = true;
       return address;
     } else {
-     alert('veuillez saisir une adresse valide')
+     alert('veuillez saisir une adresse et le code postal')
       checkFormulaire.address = false;
     }
   }
