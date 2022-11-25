@@ -197,8 +197,8 @@ function productChecked(basket, kanapItem) {
 
   // s'il s'agit du même "object" alors on rectifie la quantité
   if (object) {
-    const n = parseInt(object.quantity);
-    const m = parseInt(kanapItem.quantity);
+    const n = Int(object.quantity);
+    const m = Int(kanapItem.quantity);
     object.quantity = n + m;
 
     // sinon, on pousse le nouvel élément dans le LocalStorage
