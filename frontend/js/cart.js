@@ -166,7 +166,7 @@ function calculQuantity() {
   let number = 0;
   let CartLocalStorage = JSON.parse(localStorage.getItem("basket"));
   for (let j = 0; j < CartLocalStorage.length; j++) {
-    let quantityLoop = parseInt(CartLocalStorage[j].quantity);
+    let quantityLoop = number(CartLocalStorage[j].quantity);
     number += quantityLoop;
   }
   let totalQuantity = document.getElementById("totalQuantity");
@@ -401,7 +401,7 @@ let cart = () => {
 
   let totalQty = 0;
   for (let q in basket) {
-    let loop = parseInt(basket[q].quantity);
+    let loop = number(basket[q].quantity);
     totalQty += loop;
   }
 
