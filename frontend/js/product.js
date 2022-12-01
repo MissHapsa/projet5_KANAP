@@ -142,7 +142,7 @@ function addToCart(event, product) {
   event.preventDefault();
   // on récupère les caractéristiques du produit dans la variable
   let kanapItem = {
-    quantity: quantity.value,
+    quantity: Number(quantity.value),
     option: option.value,
     _id: product._id,
   };
@@ -197,8 +197,8 @@ function productChecked(basket, kanapItem) {
 
   // s'il s'agit du même "object" alors on rectifie la quantité
   if (object) {
-    const n = Number(object.quantity);
-    const m = Number(kanapItem.quantity);
+    const n = parseInt(object.quantity);
+    const m = parseInt(kanapItem.quantity);
     object.quantity = n + m;
 
     // sinon, on pousse le nouvel élément dans le LocalStorage

@@ -98,7 +98,7 @@ function removeProduct() {
       let productPicked = deleteKanap[index].closest(".cart__item");
       productPicked.remove();
       // Dans le local storage
-     basket.splice(index,);
+     basket.splice(index, 1);
       localStorage.setItem(
         "basket",
         JSON.stringify(basket)
@@ -166,7 +166,7 @@ function calculQuantity() {
   let number = 0;
   let CartLocalStorage = JSON.parse(localStorage.getItem("basket"));
   for (let j = 0; j < CartLocalStorage.length; j++) {
-    let quantityLoop = Number(CartLocalStorage[j].quantity);
+    let quantityLoop = parseInt(CartLocalStorage[j].quantity);
     number += quantityLoop;
   }
   let totalQuantity = document.getElementById("totalQuantity");
@@ -400,7 +400,7 @@ let cart = () => {
   letbasket = JSON.parse(localStorage.getItem("products"));
 
   let totalQty = 0;
-  for (q in basket) {
+  for (let q in basket) {
     let loop = Number(basket[q].quantity);
     totalQty += loop;
   }
