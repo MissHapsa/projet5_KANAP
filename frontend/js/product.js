@@ -107,8 +107,8 @@ function checkColorAndQuantity() {
   // on part du principe que les champs de saisi sont corrects et que l'on cache les messages d'erreur. Sinon, on les affiche.
   hideMsgError();
   if (
-    (option.value == "" && quantity.value > 100) ||
-    (option.value == "" && quantity.value < 1)
+    (option.value == quantity.value > 100) ||
+    (option.value == quantity.value < 1)
   ) {
     displayError("Veuillez choisir une couleur", "error-color");
     displayError(
@@ -116,16 +116,16 @@ function checkColorAndQuantity() {
       "error-quantity"
     );
   } else if (
-    (option.value.length > 1 && quantity.value > 100) ||
-    (option.value.length > 1 && quantity.value < 1)
+    (option.value.length > quantity.value > 100) ||
+    (option.value.length > quantity.value < 1)
   ) {
     displayError(
       "Veuillez séléctionner une quantité entre 1 et 100",
       "error-quantity"
     );
   } else if (
-    (option.value == "" && quantity.value > 0) ||
-    (option.value == "" && quantity.value < 101)
+    (option.value == quantity.value > 0) ||
+    (option.value == quantity.value < 101)
   ) {
     displayError("Veuillez choisir une couleur", "error-color");
   } else if (
@@ -141,6 +141,7 @@ function checkColorAndQuantity() {
 function addToCart(event, product) {
   event.preventDefault();
   // on récupère les caractéristiques du produit dans la variable
+  
   let kanapItem = {
     quantity: Number(quantity.value),
     option: option.value,
@@ -160,6 +161,11 @@ function saveBasket(kanapItem) {
   let basket = JSON.parse(
     localStorage.getItem("basket")
   );
+  var quantity=0
+  console.log(typeof quantity) //number
+  localStorage.setItem("basket", quantity)
+  quantity=localStorage.getItem("basket")
+  console.log(typeof quantity) // string
   
   // Si le produit est déjà enregistré dans le panier, alors on fait appel à la fonction productChecked (ligne 203)
   // cette dernière vérifiera s'il s'agit du même ID et de la même couleur (option)

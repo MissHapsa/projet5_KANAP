@@ -127,7 +127,7 @@ function changeQuantity(e) {
   // On récupère l'input le plus proche de l'élément cliqué
   const quantityElement = e.target.closest("input.itemQuantity").value; //cibler l'input pour le changement de quantité
  
-  if (quantityElement != null) {
+  if (quantityElement != 0) {
     // On récupère les id et color du produit pour aller le chercher dans le LS
     const productId = e.target
       .closest("article.cart__item")
@@ -152,7 +152,7 @@ function changeQuantity(e) {
       quantityElement >= 1
     ) {
       //ajouter la nouvelle quantité au LS
-      cart[foundProduct].quantity = quantityElement;
+      cart[foundProduct].quantity = Number(quantityElement);
 
      
       // On repush le LS tout neuf
